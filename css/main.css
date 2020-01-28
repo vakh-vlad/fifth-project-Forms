@@ -82,6 +82,13 @@ body{
 
 .form textarea{
 	height: 130px;
+	max-height: 230px;
+	min-height: 50px;
+	width: 100% !important;
+}
+
+.form select{
+	color: rgba(23,27,31, 0.5);
 }
 
 .check-list{
@@ -134,4 +141,21 @@ body{
 
 .check-list input[type="checkbox"]:checked ~ label .fake-check:after{
 	display: block;
+}
+
+.form input[type=submit]{
+	width: 230px;
+	border:0;
+	display: block;
+	margin: 0 auto;
+	background: #eca22e;
+	font: 16px/20px Roboto, sans-serif;
+	text-transform: uppercase;
+	color: #fff;
+	border-radius: 3px;
+	height: 52px;
+	cursor: pointer;
+}
+.form input[type=submit]:hover{
+	opacity: 0.8;
 }
