@@ -56,6 +56,7 @@ body{
 	margin: 0 auto;
 	padding: 20px 40px;
 	border-radius: 3px;
+
 }
 
 .form h1{
@@ -91,21 +92,28 @@ body{
 	color: rgba(23,27,31, 0.5);
 }
 
-.check-list{
-	margin: 0;
-	padding: 0 0 25px;
+.check-list,
+.radio-list{
+	margin: 0 0 25px;
+	padding: 0 0 10px;
 	list-style: none;
 	overflow: hidden;
 	border-bottom: 1px solid #f9f6f0;
 }
-
-.check-list li{
+.radio-list{
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+.check-list li,
+.radio-list li{
 	float: left;
 	width: 50%;
 	margin: 0 0 20px;
 }
 
-.fake-check{
+.fake-check,
+.fake-radio{
 	width: 30px;
 	height: 30px;
 	border: 2px solid #eeebe6;
@@ -115,6 +123,12 @@ body{
 	vertical-align: middle;
 	position: relative;
 
+}
+
+.fake-radio{
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
 }
 
 .fake-check:after{
@@ -130,16 +144,32 @@ body{
 	display: none;
 }
 
-.check-list input[type="checkbox"]{
+.fake-radio:after{
+	content: "";
+	width: 13px;
+	height: 13px;
+	background: #eca22e;
+	border-radius: 50%;
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	transform: rotate(-45deg);
+	display: none;
+}
+
+.check-list input[type="checkbox"],
+.radio-list input[type="radio"]{
 	position: absolute;
 	left: -9999px;
 }
 
-.check-list input[type="checkbox"]:checked ~ label .fake-check{
+.check-list input[type="checkbox"]:checked ~ label .fake-check,
+.radio-list input[type="radio"]:checked ~ label .fake-radio{
 	border: 2px solid #eca22e;
 }
 
-.check-list input[type="checkbox"]:checked ~ label .fake-check:after{
+.check-list input[type="checkbox"]:checked ~ label .fake-check:after,
+.radio-list input[type="radio"]:checked ~ label .fake-radio:after{
 	display: block;
 }
 
